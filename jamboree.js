@@ -430,7 +430,7 @@
     const elements = {
       heading: utils.qs(".c-heading > *", section),
       paragraphs: utils.qsa('[data-animate="true"] > *:not(ul, ol)', section),
-      listItems: utils.qsa(".c-text > ul > li", section),
+      listItems: utils.qsa(".c-text > li", section),
       buttons: utils.qsa(".u-button-group > * > *", section),
       image: utils.qs(".c-image-wrap", section)
     };
