@@ -560,14 +560,28 @@
     animationHelpers.animateButtons(elements.buttons, timeline, 0.95);
   }
 
-  function animateLandingPageHero(section, timeline) {
-    const elements = {
-      heading: utils.qs(".c-heading > *", section)
-    };
+function animateLandingPageHero(section, timeline) {
+  const elements = {
+    heading: utils.qs(".c-heading > *", section),
+    paragraph: utils.qs('[data-animate="true"] p', section),
+    buttons: utils.qsa(".u-button-group > * > *", section),
+    heroVisual: utils.qs(".c-image-wrap", section),
+    svgElements: utils.qsa(".hero_lp_svg", section)
+  };
 
-    animationHelpers.splitHeading(elements.heading, timeline, 0);
-    // Add more elements as needed
+  animationHelpers.splitHeading(elements.heading, timeline, 0.68);
+  animationHelpers.splitParagraph(elements.paragraph ? [elements.paragraph] : null, timeline, 1);
+  animationHelpers.animateButtons(elements.buttons, timeline, 1.25);
+  animationHelpers.animateImage(elements.heroVisual, timeline, 1.4);
+  
+  if (elements.svgElements.length) {
+    timeline.from(elements.svgElements, {
+      opacity: 0,
+      yPercent: 100,
+      stagger: 0.15
+    }, 1.6);
   }
+}
 
   // Cleanup function for when needed
   window.cleanupAnimations = () => {
