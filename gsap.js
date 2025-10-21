@@ -88,7 +88,7 @@ const createSplitText = (el, type) => {
 // Wait for fonts then initialize animations
 document.fonts.ready.then(() => {
 
-    // Hero Main Animation
+/*    // Hero Main Animation
     document.querySelectorAll('[data-animation-trigger="hero-main"]').forEach(el => {
         el.style.visibility = "visible";
         const delay = getDelay(parseFloat(el.getAttribute("data-animation-delay")) || 0);
@@ -115,7 +115,7 @@ document.fonts.ready.then(() => {
         const visual = el.querySelector(".hero_main_visual");
         if (visual) tl.from(visual, { opacity: 0, yPercent: 50, duration: 0.7, scale: 0.85 }, 1.4 + delay);
     });
-
+*/
     // Stacked Content Animation
     document.querySelectorAll('[data-animation-trigger="stacked-content"]').forEach(el => {
         el.style.visibility = "visible";
