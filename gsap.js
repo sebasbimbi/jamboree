@@ -87,35 +87,7 @@ const createSplitText = (el, type) => {
 
 // Wait for fonts then initialize animations
 document.fonts.ready.then(() => {
-
-/*    // Hero Main Animation
-    document.querySelectorAll('[data-animation-trigger="hero-main"]').forEach(el => {
-        el.style.visibility = "visible";
-        const delay = getDelay(parseFloat(el.getAttribute("data-animation-delay")) || 0);
-        const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: getTriggerStart(), once: true }, defaults: { ease: "back.inOut" } });
-
-        const content = el.querySelector(".hero_main_content");
-        if (content) tl.from(content, { opacity: 0, yPercent: 50, scale: 0.85, duration: 0.7 }, delay);
-
-        const heading = el.querySelector(".c-heading > *");
-        if (heading) {
-            const split = createSplitText(heading, "chars, lines, words");
-            tl.from(split.chars, { opacity: 0, yPercent: 100, duration: 0.5, stagger: { amount: 0.3, from: "start" } }, 0.68 + delay);
-        }
-
-        const text = el.querySelector('[data-animate="true"] p');
-        if (text) {
-            const split = createSplitText(text, "lines");
-            tl.from(split.lines, { opacity: 0, yPercent: 100, duration: 0.45, stagger: 0.15 }, 1 + delay);
-        }
-
-        const btns = el.querySelectorAll(".u-button-group > * > *");
-        if (btns.length) tl.from(btns, { opacity: 0, yPercent: 100, stagger: 0.15 }, 1.25 + delay);
-
-        const visual = el.querySelector(".hero_main_visual");
-        if (visual) tl.from(visual, { opacity: 0, yPercent: 50, duration: 0.7, scale: 0.85 }, 1.4 + delay);
-    });
-*/
+    
     // Stacked Content Animation
     document.querySelectorAll('[data-animation-trigger="stacked-content"]').forEach(el => {
         el.style.visibility = "visible";
